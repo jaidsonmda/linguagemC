@@ -1,0 +1,62 @@
+IN          | 2
+STORE 100   | 4  100
+IN          | 2
+STORE 101   | 4  101
+LOAD  100   | 3  100
+SUB   101   | 6  101
+OUT   	    | 1 
+JMP   0     | 7  0
+HALT        | 0
+
+------------------------------------------------------
+quant=3;
+while(quant>0){
+	acm=entrada();
+	p100=acm;
+	acm=entrada();
+	p101=acm;
+	acm=p100;
+	acm=acm-p101;
+	saida(acm);
+	quant=quant-1;
+	
+}
+ P       P
+ 0 LOAD  1 quant      | 3   26
+ 2 CMP   2 zero       | 8   27
+ 4 JZ    3 final      | 9   25
+ 6 IN                 | 2
+ 7 STORE 8 100        | 4   100
+ 9 IN                 | 2
+10 STORE 11 101       | 4   101
+12 LOAD  13 100       | 3   100
+14 SUB   15 101       | 6   101
+16 OUT                | 1
+17 LOAD  18 quant     | 3   26
+19 SUB   20 um        | 6   28
+21 STORE 22 quant     | 4   26
+23 JMP   24 inicio    | 7   0
+25 HALT               | 0
+26 quant=3            | 3
+27 zero=0             | 0
+28 um=1         | 1
+
+endereçamento direto => parâmetro é um endereço
+endereçamento imediato=> é o próprio dado
+fazer um assembler em c
+0LOAD  1quant		|3 17
+2CMP  0 		|8 18
+4JZ    5final
+ADDI   um		|9 16
+6STORE 7quant		|3 17
+8OUT   9quant		|1
+10ADDI 11 um		|5 1
+12STORE 13quant		|4 17
+14JMP     15inicio	|7 0
+16HALT			|0
+17quant=20		|20
+18 zero	
+19 valor		|0
+
+cria as instruções ADDI SUBI LOADI
+

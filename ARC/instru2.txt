@@ -1,0 +1,17 @@
+										;P
+		IN 							;0			2
+		STORE 100				;1			4			100
+		IN							;3			2
+		STORE 101				;4			4			101
+		LOAD 100				;6			3			100
+		ADD  101				;8			5			101
+		CMPI 10					;10     11    10
+		JZ   OUTRA			;12			9			20
+		JS   OUTRA			;14     10		20
+		LOAD 1					;16			14		1
+		OUT							;18			1
+		HALT						;19			0
+OUTRA:
+		LOADI 0					;20     14    0
+		OUT							;22			1
+		HALT						;23			0
